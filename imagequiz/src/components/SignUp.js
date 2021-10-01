@@ -1,5 +1,6 @@
 import * as ReactBootStrap from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 function SignUp() {
     return (
         <div>
@@ -41,7 +42,9 @@ function SignUp() {
                 />
                 <label htmlFor="floatingPasswordCustom">Password</label>
             </Form.Floating>
-            
+            <Button variant="primary" size="lg">
+                Sign Up
+            </Button>{' '}
   
         </div>
     );
