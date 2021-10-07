@@ -9,26 +9,30 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container'
 
 function App() {
   //<Home></Home> or <Home />
   return (
     <HashRouter>
-      <Switch>
+      <Container>
+        <Switch>
 
-        <Route path='/signup'>
-          <SignUp></SignUp>
-        </Route>
+          <Route path='/signup'>
+            <SignUp></SignUp>
+          </Route>
 
-        <Route path='/login'>
-          <LogIn></LogIn>
-        </Route>
+          <Route path='/login'>
+            <LogIn></LogIn>
+          </Route>
 
-        <Route path='/'>
-          <Home/>
-        </Route>
+          <Route path='/'>
+            <Home />
+          </Route>
 
-      </Switch>
+        </Switch>
+      </Container>
     </HashRouter>
   );
 }
