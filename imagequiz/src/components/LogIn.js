@@ -34,7 +34,7 @@ function LogIn() {
             <Container>
                 <ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <ReactBootStrap.Container>
-                        <ReactBootStrap.Navbar.Brand href="#home">Image Quiz</ReactBootStrap.Navbar.Brand>
+                        <ReactBootStrap.Navbar.Brand href="#/">Image Quiz</ReactBootStrap.Navbar.Brand>
                         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
                             <ReactBootStrap.Nav className="me-auto">

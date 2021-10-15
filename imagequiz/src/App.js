@@ -1,9 +1,12 @@
 
 import './App.css';
-//npm start TO START
+//npm start TO START, control c to end
+// make pretty and remove quiz from nav
+
 import Home from './components/Home'
 import SignUp from './components/SignUp'
 import LogIn from './components/LogIn'
+import Quiz from './components/Quiz'
 import {
   HashRouter,
   Switch,
@@ -27,8 +30,12 @@ function App() {
             <LogIn></LogIn>
           </Route>
 
-          <Route path='/'>
+          <Route exact path='/'>
             <Home />
+          </Route>
+
+          <Route path='/quiz'>
+            <Quiz />
           </Route>
 
         </Switch>
