@@ -1,5 +1,5 @@
 
-import flowers from './flowers';
+import api from "../communication/api"
 import * as ReactBootStrap from 'react-bootstrap'
 import Figure from 'react-bootstrap/Figure'
 import Container from 'react-bootstrap/Container'
@@ -52,7 +52,57 @@ function Home() {
                     <h1>Welcome to the Image Quiz home screen, {location.state.username}!</h1>
                 */}
 
-                {flowers.map((flower, i) => (
+                {api.getFlowers().then(x => x.map((flower, i) => (
+                    <div key={`flower ${i}`}>
+
+                        <Figure onClick={() => goToQuiz(flower.name)} class="text-center">
+                            <Figure.Image
+
+                                alt={flower.name}
+                                src={flower.picture}
+                            />
+                            <Figure.Caption>
+                                {flower.name}
+                            </Figure.Caption>
+                        </Figure>
+                    </div>
+                )))}
+            </Container>
+        </div>
+
+    );
+}
+
+export default Home;
+
+/*
+<img src={flower.picture} alt='flower' fluid/>
+                    <p>{flower.name}</p>
+
+
+
+
+
+{api.getFlowers().then(x => x.map((flower, i) => (
+                    <div key={`flower ${i}`}>
+
+                        <Figure onClick={() => goToQuiz(flower.name)} class="text-center">
+                            <Figure.Image
+
+                                alt={flower.name}
+                                src={flower.picture}
+                            />
+                            <Figure.Caption>
+                                {flower.name}
+                            </Figure.Caption>
+                        </Figure>
+                    </div>
+                )))}
+
+
+OLD FLOWER DISPLAYING (NEW ON TOP):
+
+{flowers.map((flower, i) => (
                     <div key={`flower ${i}`}>
 
                         <Figure onClick={() => goToQuiz(flower.name)} class="text-center">
@@ -67,15 +117,4 @@ function Home() {
                         </Figure>
                     </div>
                 ))}
-            </Container>
-        </div>
-
-    );
-}
-
-export default Home;
-
-/*
-<img src={flower.picture} alt='flower' fluid/>
-                    <p>{flower.name}</p>
 */
